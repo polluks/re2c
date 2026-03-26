@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(re2c VERSION 4.3 HOMEPAGE_URL "https://re2c.org/")
+project(re2c VERSION 4.5 HOMEPAGE_URL "https://re2c.org/")
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
@@ -230,6 +230,7 @@ set(re2c_sources
     src/encoding/ebcdic.cc
     src/encoding/enc.cc
     src/encoding/range_suffix.cc
+    src/encoding/unicode_casemap.cc
     src/encoding/utf8.cc
     src/encoding/utf16.cc
     src/msg/msg.cc
@@ -598,6 +599,7 @@ if (RE2C_BUILD_LIBS)
         src/nfa/re_to_nfa.cc
         src/encoding/enc.cc
         src/encoding/range_suffix.cc
+        src/encoding/unicode_casemap.cc
         src/encoding/ebcdic.cc
         src/encoding/utf16.cc
         src/encoding/utf8.cc

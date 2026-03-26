@@ -40,7 +40,7 @@ jobs:
 
       - name: Setup apt cache (Linux)
         if: startsWith(runner.os, 'Linux')
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: /var/cache/apt
           key: ${{ runner.os }}-apt-cache-${{ matrix.os }}-${{ github.sha }}
@@ -155,7 +155,7 @@ jobs:
       - name: Archive test artifacts
         # Run this step only if tests failed (otherwise there is nothing to upload).
         if: failure()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           # To ensure that jobs don't overwrite existing artifacts,
           # use a different name per job.
